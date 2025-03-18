@@ -30,39 +30,94 @@
         {
             components = new System.ComponentModel.Container();
             ButtonStopwatch = new Button();
-            labelStopwatch = new Label();
+            labelMinute = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            buttonStop = new Button();
+            buttonReset = new Button();
+            labelHour = new Label();
+            labelSecond = new Label();
             SuspendLayout();
             // 
             // ButtonStopwatch
             // 
-            ButtonStopwatch.Location = new Point(268, 212);
+            ButtonStopwatch.BackColor = Color.FromArgb(128, 255, 128);
+            ButtonStopwatch.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ButtonStopwatch.Location = new Point(59, 195);
             ButtonStopwatch.Name = "ButtonStopwatch";
-            ButtonStopwatch.Size = new Size(94, 29);
+            ButtonStopwatch.Size = new Size(136, 54);
             ButtonStopwatch.TabIndex = 0;
             ButtonStopwatch.Text = "Start\r\n";
-            ButtonStopwatch.UseVisualStyleBackColor = true;
+            ButtonStopwatch.UseVisualStyleBackColor = false;
             ButtonStopwatch.Click += ButtonStopwatch_Click;
             // 
-            // labelStopwatch
+            // labelMinute
             // 
-            labelStopwatch.AutoSize = true;
-            labelStopwatch.Location = new Point(308, 103);
-            labelStopwatch.Name = "labelStopwatch";
-            labelStopwatch.Size = new Size(17, 20);
-            labelStopwatch.TabIndex = 1;
-            labelStopwatch.Text = "0";
+            labelMinute.AutoSize = true;
+            labelMinute.Font = new Font("Times New Roman", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelMinute.Location = new Point(261, 83);
+            labelMinute.Name = "labelMinute";
+            labelMinute.Size = new Size(71, 53);
+            labelMinute.TabIndex = 1;
+            labelMinute.Text = "00";
             // 
             // timer1
             // 
             timer1.Tick += TimerStopwatch;
+            // 
+            // buttonStop
+            // 
+            buttonStop.BackColor = Color.FromArgb(255, 128, 128);
+            buttonStop.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonStop.Location = new Point(239, 195);
+            buttonStop.Name = "buttonStop";
+            buttonStop.Size = new Size(124, 54);
+            buttonStop.TabIndex = 2;
+            buttonStop.Text = "Stop";
+            buttonStop.UseVisualStyleBackColor = false;
+            buttonStop.Click += buttonStop_Click;
+            // 
+            // buttonReset
+            // 
+            buttonReset.BackColor = Color.FromArgb(128, 255, 255);
+            buttonReset.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonReset.Location = new Point(405, 195);
+            buttonReset.Name = "buttonReset";
+            buttonReset.Size = new Size(133, 54);
+            buttonReset.TabIndex = 3;
+            buttonReset.Text = "Reset";
+            buttonReset.UseVisualStyleBackColor = false;
+            buttonReset.Click += buttonReset_Click;
+            // 
+            // labelHour
+            // 
+            labelHour.AutoSize = true;
+            labelHour.Font = new Font("Times New Roman", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelHour.Location = new Point(165, 83);
+            labelHour.Name = "labelHour";
+            labelHour.Size = new Size(71, 53);
+            labelHour.TabIndex = 4;
+            labelHour.Text = "00";
+            // 
+            // labelSecond
+            // 
+            labelSecond.AutoSize = true;
+            labelSecond.Font = new Font("Times New Roman", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelSecond.Location = new Point(359, 83);
+            labelSecond.Name = "labelSecond";
+            labelSecond.Size = new Size(71, 53);
+            labelSecond.TabIndex = 5;
+            labelSecond.Text = "00";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(605, 320);
-            Controls.Add(labelStopwatch);
+            Controls.Add(labelSecond);
+            Controls.Add(labelHour);
+            Controls.Add(buttonReset);
+            Controls.Add(buttonStop);
+            Controls.Add(labelMinute);
             Controls.Add(ButtonStopwatch);
             Name = "Form1";
             Text = "Form1";
@@ -73,7 +128,11 @@
         #endregion
 
         private Button ButtonStopwatch;
-        private Label labelStopwatch;
+        private Label labelMinute;
         private System.Windows.Forms.Timer timer1;
+        private Button buttonStop;
+        private Button buttonReset;
+        private Label labelHour;
+        private Label labelSecond;
     }
 }
