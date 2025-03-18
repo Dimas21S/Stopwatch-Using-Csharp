@@ -24,12 +24,12 @@ namespace Latihan_1
             if (seconds == 60)
             {
                 seconds = 0;
-                minute += 1;
+                minute ++;
 
                 if (minute == 60)
                 {
                     minute = 0;
-                    hour += 1;
+                    hour ++;
                 }
             }
 
