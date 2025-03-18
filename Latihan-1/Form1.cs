@@ -11,45 +11,51 @@ namespace Latihan_1
             InitializeComponent();
         }
 
-
+        //Button start
         private void ButtonStopwatch_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer1.Enabled = true;
         }
 
-        private void TimerStopwatch(object sender, EventArgs e)
+        //Button stop
+        private void buttonStop_Click(object sender, EventArgs e)
         {
-            seconds++;
+            timer1.Enabled = false;
+        }
 
-            if (seconds == 60)
-            {
-                seconds = 0;
-                minute ++;
+        //Button reset
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
 
-                if (minute == 60)
-                {
-                    minute = 0;
-                    hour ++;
-                }
-            }
+            seconds = 0;
+            minute = 0;
+            hour = 0;
 
             labelSecond.Text = seconds.ToString("D2");
             labelMinute.Text = minute.ToString("D2");
             labelHour.Text = hour.ToString("D2");
         }
 
-        private void buttonStop_Click(object sender, EventArgs e)
+        //Method => dijalankan ketika button start diklik
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
-        }
+            if (timer1.Enabled == true)
+            {
+                seconds++;
 
-        private void buttonReset_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
+                if (seconds == 60)
+                {
+                    seconds = 0;
+                    minute++;
 
-            seconds = 0;
-            minute = 0;
-            hour = 0;
+                    if(minute == 60)
+                    {
+                        minute = 0;
+                        hour++;
+                    }
+                }
+            }
 
             labelSecond.Text = seconds.ToString("D2");
             labelMinute.Text = minute.ToString("D2");
